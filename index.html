@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DarkWood City Official Website</title>
+		<link rel="icon" type="image/png" href="Images/Logo.png">
+		<link rel="stylesheet" href="Css.css">
+	</head>
+
+	<body>
+
+		<h1>GloomyWood</h1>
+		<h2>Darkness City</h2>
+
+		<a class="HomeButton" href="./index.html">Home</a>
+		<a class="LegendsButton" href="Legends/index.html">Legends</a>
+		<a class="TopicalityButton" href="Topicality/index.html">Topicality</a>
+
+		<div class="ScreenContainer">
+
+			<img class="Screen" src="Screens/Screen1.png">
+			<img class="Screen" src="Screens/Screen2.png">
+			<img class="Screen" src="Screens/Screen3.png">
+			<img class="Screen" src="Screens/Screen4.png">
+
+		</div>
+
+		<div class="BallsContainer"></div>
+
+		<script>
+			const screens = document.querySelectorAll(".Screen");
+			const ballsContainer = document.querySelector(".BallsContainer");
+
+			// Ukrycie wszystkich screenów oprócz pierwszego
+			screens.forEach((screen, index) => {
+				if (index !== 0) {
+					screen.style.display = "none";
+				}
+			});
+
+			// Tworzenie kulek
+			screens.forEach((screen, index) => {
+
+				const ball = document.createElement("button");
+
+				ball.className = "Ball";
+
+				// Pierwsza kulka jest aktywna
+				if (index === 0) {
+					ball.classList.add("Active");
+				}
+
+				// Po kliknięciu kulki
+				ball.addEventListener("click", () => {
+
+					// Ukryj wszystkie screeny
+					screens.forEach((otherScreen) => {
+						otherScreen.style.display = "none";
+					});
+
+					// Pokaż wybrany screen
+					screen.style.display = "block";
+
+					// Usuń aktywny stan ze wszystkich kulek
+					document.querySelectorAll(".Ball").forEach((otherBall) => {
+						otherBall.classList.remove("Active");
+					});
+
+					// Aktywuj klikniętą kulkę
+					ball.classList.add("Active");
+
+				});
+
+				// Dodaj kulkę do kontenera
+				ballsContainer.appendChild(ball);
+
+			});
+		</script>
+		
+		<div class="Box">
+			<h3>We invite everyone to GloomyWood, a small town near GloomyMountain, which is steeped in legends. You can learn more about them in the "Legends" tab at the top. If you'd like to visit our mountains, remember that you can book a house with us for as long as you like, and if you get hungry, you can buy food at our temporary shop. If you'd like to buy a house temporarily, call +## ### ### ###, and have a nice day.<h3>
+		</div>
+	</body>
+</html>

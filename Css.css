@@ -1,0 +1,157 @@
+body {
+	background-color: rgb(255, 255, 255);
+	margin: 0;
+}
+
+/* Główny tytuł */
+
+h1 {
+	font-family: "Courier", monospace;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 50px;
+	text-align: center;
+}
+
+/* Podtytuł */
+
+h2 {
+	font-family: "Courier", monospace;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 30px;
+	text-align: center;
+}
+
+h3 {
+	font-family: "Courier", monospace;
+	font-size: 25px;
+	text-align: left;
+}
+
+/* Przycisk Legends */
+
+.HomeButton {
+	font-family: "Courier", monospace;
+	font-size: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	left: 600px;
+	top: 20px;
+}
+
+.LegendsButton {
+	font-family: "Courier", monospace;
+	font-size: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	left: 400px;
+	top: 20px;
+}
+
+.TopicalityButton {
+	font-family: "Courier", monospace;
+	font-size: 40px;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	left: 125px;
+	top: 20px;
+}
+
+.Box {
+	background-color: rgb(255,255,255);
+	border-radius: 0px;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	justify-content: flex-start;
+
+	gap: 10px;
+
+	width: 50%;
+	min-height: 100px; /* minimalna wysokość */
+	/* height: auto; <- domyślnie, można pominąć */
+
+	margin: 20px auto;
+
+	overflow-y: visible; /* lub po prostu usuń tę linię */
+}
+
+/* Kontener na screen */
+
+.ScreenContainer {
+	margin-top: 100px;
+}
+
+/* Screeny */
+
+.Screen {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 20px 0;
+}
+
+/* Kontener na kulki */
+
+.BallsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: -50px;
+}
+
+/* Kulki */
+
+.Ball {
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	border-radius: 50%;
+	border: none;
+	background-color: gray;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+/* Efekt najechania */
+
+.Ball:hover {
+	transform: scale(1.2);
+}
+
+/* Aktywna kulka */
+
+.Ball.Active {
+	background-color: black;
+	transform: scale(1.2);
+}
+
+/* Zwykły przycisk */
+
+.button {
+	font-family: "Courier", monospace;
+	font-size: 50px;
+	display: inline-block;
+	padding: 10px 30px;
+	background: rgb(150, 150, 150);
+	color: black;
+	text-decoration: none;
+	border-radius: 10px;
+}

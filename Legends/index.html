@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GloomyWood City Official Website</title>
+		<link rel="icon" type="image/png" href="../Images/Logo.png">
+		<link rel="stylesheet" href="Css.css">
+	</head>
+
+	<body>
+
+		<h1>GloomyWood</h1>
+		<h2>Darkness City</h2>
+		
+		<a class="HomeButton" href="../index.html">Home</a>
+		<a class="LegendsButton" href="../Legends/index.html">Legends</a>
+		<a class="TopicalityButton" href="../Topicality/index.html">Topicality</a>
+
+		<div class="ScreenContainer">
+
+			<img class="Screen" src="../Screens/Screen1.png">
+			<img class="Screen" src="../Screens/Screen2.png">
+			<img class="Screen" src="../Screens/Screen3.png">
+			<img class="Screen" src="../Screens/Screen4.png">
+
+		</div>
+
+		<div class="BallsContainer"></div>
+
+		<script>
+			const screens = document.querySelectorAll(".Screen");
+			const ballsContainer = document.querySelector(".BallsContainer");
+
+			// Ukrycie wszystkich screenów oprócz pierwszego
+			screens.forEach((screen, index) => {
+				if (index !== 0) {
+					screen.style.display = "none";
+				}
+			});
+
+			// Tworzenie kulek
+			screens.forEach((screen, index) => {
+
+				const ball = document.createElement("button");
+
+				ball.className = "Ball";
+
+				// Pierwsza kulka jest aktywna
+				if (index === 0) {
+					ball.classList.add("Active");
+				}
+
+				// Po kliknięciu kulki
+				ball.addEventListener("click", () => {
+
+					// Ukryj wszystkie screeny
+					screens.forEach((otherScreen) => {
+						otherScreen.style.display = "none";
+					});
+
+					// Pokaż wybrany screen
+					screen.style.display = "block";
+
+					// Usuń aktywny stan ze wszystkich kulek
+					document.querySelectorAll(".Ball").forEach((otherBall) => {
+						otherBall.classList.remove("Active");
+					});
+
+					// Aktywuj klikniętą kulkę
+					ball.classList.add("Active");
+
+				});
+
+				// Dodaj kulkę do kontenera
+				ballsContainer.appendChild(ball);
+
+			});
+		</script>
+		
+		<div class="Box">
+			<h3>Dark Cult</h3>
+			<h4>This legend tells of a cult that once operated from a hidden base within one of GloomyMountain's hills, where they performed mysterious rituals. To this day, no one knows what the cult truly worshipped. Some believed they served Moloch, but even that theory has never been confirmed.One day, a deafening roar from an unknown creature echoed across the mountain. Armed local residents climbed the hill and raided the cult's hideout, capturing most of its members.From that day forward, people began disappearing around GloomyMountain. The only known survivor claimed to have witnessed a massive black creature killing a man before his eyes. The creature later became known as the BlockMonster.</h4>
+		</div>
+		<div class="Box">
+			<h3>Eyes</h3>
+			<h4>In 1998, a group of tourists decided to investigate the existence of the BlockMonster. During their expedition, they collected various clues about the creature and reportedly discovered one of its body parts. After spending three days recovering additional pieces, the entire group suddenly disappeared.A search party was organized, and the tourists were eventually found inside an old wooden house deep in the forest. All of them were dead, and their eyes were missing.Not long afterward, local residents began reporting strange camera activity in places where no cameras had ever been installed. One by one, every person who reported these sightings was later found dead.</h4>
+		</div>
+	</body>
+</html>
